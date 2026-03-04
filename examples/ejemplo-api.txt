@@ -1,0 +1,34 @@
+mi-api-rest/
+├── 📁 src/
+│   ├── 📁 controllers/
+│   │   ├── 📄 userController.js
+│   │   ├── 📄 productController.js
+│   │   └── 📄 orderController.js
+│   ├── 📁 models/
+│   │   ├── 📄 User.js
+│   │   ├── 📄 Product.js
+│   │   └── 📄 Order.js
+│   ├── 📁 routes/
+│   │   ├── 📄 userRoutes.js
+│   │   ├── 📄 productRoutes.js
+│   │   └── 📄 orderRoutes.js
+│   ├── 📁 middleware/
+│   │   ├── 📄 auth.js
+│   │   ├── 📄 errorHandler.js
+│   │   └── 📄 validator.js
+│   ├── 📁 config/
+│   │   ├── 📄 database.js
+│   │   └── 📄 env.js
+│   ├── 📁 utils/
+│   │   ├── 📄 logger.js
+│   │   └── 📄 helpers.js
+│   └── 📄 app.js
+├── 📁 tests/
+│   ├── 📄 user.test.js
+│   ├── 📄 product.test.js
+│   └── 📄 setup.js
+├── 📄 server.js
+├── 📄 package.json
+├── 📄 .env.example
+├── 📄 .gitignore
+└── 📄 README.md

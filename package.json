@@ -1,0 +1,41 @@
+{
+  "name": "arquitecto-proyectos",
+  "version": "0.1.0",
+  "description": "Herramienta para generar estructuras de proyectos a partir de un archivo de texto plano.",
+  "main": "index.js",
+  "bin": {
+    "arquitecto": "index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "node tests/parser.test.js",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "keywords": [
+    "scaffolding",
+    "generator",
+    "automation",
+    "cli",
+    "project-architect",
+    "project-structure",
+    "file-generator"
+  ],
+  "author": "Diego-20000",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "prettier": "^2.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Diego-20000/arquitecto-proyectos.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Diego-20000/arquitecto-proyectos/issues"
+  },
+  "homepage": "https://github.com/Diego-20000/arquitecto-proyectos#readme"
+}

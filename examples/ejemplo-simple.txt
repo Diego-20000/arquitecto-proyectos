@@ -1,0 +1,9 @@
+mi-proyecto-simple/
+├── 📁 css/
+│   └── 📄 style.css
+├── 📁 js/
+│   └── 📄 script.js
+├── 📁 img/
+├── 📄 index.html
+├── 📄 .gitignore
+└── 📄 README.md

@@ -1,0 +1,31 @@
+mi-sitio-web/
+├── 📁 src/
+│   ├── 📁 components/
+│   │   ├── 📄 Header.jsx
+│   │   ├── 📄 Footer.jsx
+│   │   └── 📄 Navbar.jsx
+│   ├── 📁 pages/
+│   │   ├── 📄 Home.jsx
+│   │   ├── 📄 About.jsx
+│   │   └── 📄 Contact.jsx
+│   ├── 📁 styles/
+│   │   ├── 📄 global.css
+│   │   ├── 📄 variables.css
+│   │   └── 📄 responsive.css
+│   ├── 📁 assets/
+│   │   ├── 📁 images/
+│   │   └── 📁 icons/
+│   ├── 📄 App.jsx
+│   ├── 📄 index.jsx
+│   └── 📄 config.js
+├── 📁 public/
+│   ├── 📄 index.html
+│   └── 📄 favicon.ico
+├── 📁 tests/
+│   ├── 📄 App.test.jsx
+│   └── 📄 components.test.jsx
+├── 📄 package.json
+├── 📄 .env.example
+├── 📄 .gitignore
+├── 📄 README.md
+└── 📄 vite.config.js
