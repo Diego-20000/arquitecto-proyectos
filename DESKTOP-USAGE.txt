@@ -1,0 +1,120 @@
+╔════════════════════════════════════════════════════════════════╗
+║     ARQUITECTO DE PROYECTOS - GUÍA DE USO EN ESCRITORIO        ║
+╚════════════════════════════════════════════════════════════════╝
+
+🎯 OPCIÓN 1: USAR DESDE EL ESCRITORIO (RECOMENDADO)
+═════════════════════════════════════════════════════════════════
+
+Paso 1: Ejecutar setup una sola vez
+─────────────────────────────────────
+  1. Abre el Explorador de archivos
+  2. Ve a la carpeta: C:\Users\JuanaManso\Documents\Proyectos de Git\arquitecto-proyectos\arquitecto-proyectos\arquitecto-proyectos
+  3. Busca el archivo: setup-desktop.bat
+  4. Haz doble clic en él
+  5. Se creará un acceso directo en tu escritorio automáticamente
+
+⚡ Resultado:
+  ✅ Se crea "Arquitecto de Proyectos.lnk" en tu escritorio
+  ✅ Ya puedes arrastrarlo desde ahora
+
+
+Paso 2: Usar desde el escritorio
+─────────────────────────────────────
+  1. Copia un archivo .txt de plantilla a tu escritorio
+     Ejemplos disponibles:
+     • ejemplo-nextjs-full-stack.txt
+     • ejemplo-fastapi-backend.txt
+     • ejemplo-vuejs-frontend.txt
+     • ejemplo-laravel-fullstack.txt
+     • ejemplo-monorepo-nx.txt
+     • ejemplo-astro-sitio-estatico.txt
+     • ejemplo-electron-desktop.txt
+
+  2. Arrastra el archivo .txt sobre "Arquitecto de Proyectos.lnk"
+
+  3. ¡LISTO! Se abre una ventana y genera tu proyecto
+
+
+═════════════════════════════════════════════════════════════════
+
+🎯 OPCIÓN 2: USAR ARCHIVO .BAT DIRECTAMENTE
+═════════════════════════════════════════════════════════════════
+
+  1. Copia Arquitecto.bat a tu escritorio
+  2. Crea o copia un archivo .txt de plantilla
+  3. Arrastra el .txt sobre Arquitecto.bat
+  4. ¡Genera tu proyecto!
+
+
+═════════════════════════════════════════════════════════════════
+
+🎯 OPCIÓN 3: USAR DESDE POWERSHELL (USUARIOS AVANZADOS)
+═════════════════════════════════════════════════════════════════
+
+  1. Abre PowerShell en la carpeta del proyecto
+  2. Ejecuta:
+     node index.js ejemplo-nextjs-full-stack.txt
+
+  3. O simplemente:
+     npm start
+
+
+═════════════════════════════════════════════════════════════════
+
+❓ PREGUNTAS FRECUENTES
+
+P: ¿Puedo personalizar una plantilla?
+R: Sí, haz una copia de la plantilla y edítala con Notepad
+
+P: ¿Qué pasa si arrastra un archivo incorrecto?
+R: Se muestra un error. Solo usa archivos .txt de plantillas
+
+P: ¿Dónde se genera el proyecto?
+R: En la carpeta donde ejecutes el comando
+
+P: ¿Cómo creo mis propias plantillas?
+R: Copia ejemplo-simple.txt y adapta la estructura
+
+
+═════════════════════════════════════════════════════════════════
+
+📚 FORMATO DE LAS PLANTILLAS
+
+Las plantillas son archivos .txt con estructura tree:
+
+    mi-proyecto/
+    ├── 📁 src/
+    │   ├── 📁 components/
+    │   │   └── 📄 Button.tsx
+    │   └── 📄 main.tsx
+    ├── 📄 package.json
+    └── 📄 README.md
+
+Símbolos:
+  📁 = Carpeta
+  📄 = Archivo
+  ├── = Rama normal
+  └── = Última rama
+  │ = Línea vertical (continuación)
+
+
+═════════════════════════════════════════════════════════════════
+
+🚀 EJEMPLO PASO A PASO
+
+1. Ejecuta setup-desktop.bat una vez
+2. En tu escritorio aparece "Arquitecto de Proyectos"
+3. Copia "ejemplo-nextjs-full-stack.txt" al escritorio
+4. Arrastra el .txt sobre "Arquitecto de Proyectos"
+5. Se abre ventana negra procesando...
+6. ¡Proyecto creado en el escritorio!
+7. Abre carpeta con tu nuevo proyecto
+8. npm install
+9. npm run dev
+10. ¡Listo! 🎉
+
+
+═════════════════════════════════════════════════════════════════
+
+Última actualización: 4 de marzo de 2026
+Versión: 1.0.0 (Soporte Desktop)
