@@ -1,41 +1,81 @@
 {
   "name": "arquitecto-proyectos",
-  "version": "0.1.0",
-  "description": "Herramienta para generar estructuras de proyectos a partir de un archivo de texto plano.",
+  "version": "1.0.0",
+  "description": "Generador inteligente de estructuras de proyectos desde archivos de texto plano. Crea proyectos complejos en segundos con formato tree-like simple.",
+  "long_description": "Arquitecto de Proyectos es una herramienta CLI potente y flexible que lee archivos de texto plano con formato tree-like y genera estructuras de proyectos completas. Perfecta para crear plantillas reutilizables de proyectos web, APIs, sitios estáticos y más.",
   "main": "index.js",
   "bin": {
     "arquitecto": "index.js"
   },
+  "files": [
+    "index.js",
+    "src/",
+    "lib/",
+    "examples/",
+    "docs/",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "start": "node index.js",
     "test": "node tests/parser.test.js",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "validate": "npm run lint && npm run format:check"
   },
   "keywords": [
     "scaffolding",
     "generator",
     "automation",
     "cli",
+    "project-generator",
     "project-architect",
     "project-structure",
-    "file-generator"
+    "file-generator",
+    "tree-structure",
+    "boilerplate",
+    "template",
+    "project-template",
+    "nodejs",
+    "command-line",
+    "developer-tools"
   ],
-  "author": "Diego-20000",
+  "author": {
+    "name": "Diego-20000",
+    "url": "https://github.com/Diego-20000"
+  },
+  "maintainers": [
+    {
+      "name": "Diego-20000",
+      "url": "https://github.com/Diego-20000"
+    }
+  ],
   "license": "MIT",
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=12.0.0",
+    "npm": ">=6.0.0"
   },
+  "preferGlobal": false,
   "devDependencies": {
     "eslint": "^8.0.0",
     "prettier": "^2.8.0"
   },
+  "dependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/Diego-20000/arquitecto-proyectos.git"
+    "url": "https://github.com/Diego-20000/arquitecto-proyectos.git",
+    "directory": "."
   },
   "bugs": {
-    "url": "https://github.com/Diego-20000/arquitecto-proyectos/issues"
+    "url": "https://github.com/Diego-20000/arquitecto-proyectos/issues",
+    "email": "issues@github.com"
   },
-  "homepage": "https://github.com/Diego-20000/arquitecto-proyectos#readme"
+  "homepage": "https://github.com/Diego-20000/arquitecto-proyectos#readme",
+  "documentation": "https://github.com/Diego-20000/arquitecto-proyectos/tree/main/docs",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/Diego-20000"
+  }
 }
