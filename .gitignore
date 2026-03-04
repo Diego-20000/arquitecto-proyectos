@@ -1,20 +1,86 @@
-# Ignorar dependencias de Node
-/node_modules
-
-# Archivos de entorno
-.env
-
-# Logs
+# ============================================================================
+# Dependencias
+# ============================================================================
+/node_modules/
 npm-debug.log*
+npm-error.log*
 yarn-debug.log*
 yarn-error.log*
+yarn.lock
+package-lock.json
+.pnp
+.pnp.js
 
-# Archivos del sistema operativo
+# ============================================================================
+# Archivos de Entorno y Config
+# ============================================================================
+.env
+.env.local
+.env.*.local
+.env.test
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ============================================================================
+# IDEs y Editores
+# ============================================================================
+.vscode
+.idea
+*.swp
+*.swo
+*~
 .DS_Store
 Thumbs.db
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 
-# VSCode
-.vscode
+# ============================================================================
+# Compilación y Build
+# ============================================================================
+/dist
+/build
+/out
+/.next
+/coverage
+/.cache
 
-# Proyectos generados (ejemplo)
-/proyectos-generados
+# ============================================================================
+# Proyectos Generados (Created by the tool)
+# ============================================================================
+/proyectos-generados/
+/test-projects/
+/generated-projects/
+
+# ============================================================================
+# Temporales
+# ============================================================================
+*.tmp
+*.temp
+*.bak
+*.backup
+.DS_Store
+
+# ============================================================================
+# Archivos grandes
+# ============================================================================
+*.tar
+*.tar.gz
+*.zip
+*.rar
+*.7z
+
+# ============================================================================
+# Archivos de Sistema
+# ============================================================================
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+.VolumeIcon.icns
+$RECYCLE.BIN/
+.directory
