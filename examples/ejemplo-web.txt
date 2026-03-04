@@ -1,4 +1,4 @@
-mi-sitio-web/
++mi-sitio-web/
 ├── 📁 src/
 │   ├── 📁 components/
 │   │   ├── 📄 Header.jsx
