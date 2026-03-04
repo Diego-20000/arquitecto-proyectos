@@ -118,13 +118,23 @@ function extractName(line) {
   }
 
   // Buscar patrón: símbolo + espacios + nombre + / opcional
-  const match = line.match(/[📁📄]\s*(.+?)(?:\/)?$/);
-
-  if (match && match[1]) {
-    return match[1].trim();
+  // Intentar con patrón flexible que funcione con emojis multi-byte
+  const match = line.match(/[📁📄]/);
+  
+  if (!match) {
+    return null;
   }
 
-  return null;
+  // Obtener posición del emoji
+  const emojiIndex = line.indexOf(match[0]);
+  
+  // Extraer todo después del emoji
+  let afterEmoji = line.substring(emojiIndex + match[0].length).trim();
+  
+  // Limpiar cualquier slash al final
+  afterEmoji = afterEmoji.replace(/\/$/, "").trim();
+  
+  return afterEmoji || null;
 }
 
 /**
