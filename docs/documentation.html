@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación - Arquitecto de Proyectos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #0B1C2D;
+            --color-secondary: #3A4F6B;
+            --color-accent: #2E9BFF;
+            --color-light: #E8F1F9;
+            --color-bg: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--color-primary);
+            background-color: var(--color-bg);
+        }
+
+        nav {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--color-accent);
+        }
+
+        nav .logo {
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-right: auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section h2 {
+            color: var(--color-primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--color-accent);
+        }
+
+        .section h3 {
+            color: var(--color-secondary);
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .section p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .code-block {
+            background: #f5f5f5;
+            border-left: 4px solid var(--color-accent);
+            padding: 1.5rem;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            color: #333;
+        }
+
+        .doc-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .doc-list li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .doc-list li:before {
+            content: "►";
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+        }
+
+        .highlight {
+            background: var(--color-light);
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin: 1.5rem 0;
+        }
+
+        .highlight strong {
+            color: var(--color-primary);
+        }
+
+        footer {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section h4 {
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--color-accent);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="logo">📐 Arquitecto</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="features.html">Características</a></li>
+            <li><a href="examples.html">Ejemplos</a></li>
+            <li><a href="documentation.html">Documentación</a></li>
+            <li><a href="contributing.html">Contribuir</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Documentación Completa</h1>
+        <p>Aprende a usar Arquitecto de Proyectos en profundidad</p>
+    </header>
+
+    <div class="container">
+        <div class="section">
+            <h2>Inicio Rápido</h2>
+            
+            <h3>Requisitos</h3>
+            <ul class="doc-list">
+                <li>Node.js v12 o superior</li>
+                <li>npm (incluido con Node.js)</li>
+                <li>Un editor de texto cualquiera</li>
+            </ul>
+
+            <h3>Instalación</h3>
+            <div class="code-block">
+git clone https://github.com/Diego-20000/arquitecto-proyectos.git
+cd arquitecto-proyectos
+npm install
+            </div>
+
+            <h3>Uso Básico</h3>
+            <div class="code-block">
+node index.js ejemplos/ejemplo-web.txt mi-proyecto
+            </div>
+
+            <p>Esto creará una carpeta llamada <code style="background: #f0f0f0; padding: 0.2rem 0.4rem;">mi-proyecto</code> con la estructura del archivo de plano.</p>
+        </div>
+
+        <div class="section">
+            <h2>Creando tu Primer Archivo de Plano</h2>
+            
+            <p>Un archivo de plano es un archivo de texto simple que describe la estructura de tu proyecto.</p>
+
+            <h3>Formato Básico</h3>
+            <div class="code-block">
+mi-proyecto/
+├── 📁 src/
+│   ├── 📄 main.js
+│   └── 📄 utils.js
+├── 📁 public/
+│   └── 📄 index.html
+└── 📄 package.json
+            </div>
+
+            <h3>Explicación de Símbolos</h3>
+            <ul class="doc-list">
+                <li><strong>📁</strong> - Indica una carpeta/directorio</li>
+                <li><strong>📄</strong> - Indica un archivo</li>
+                <li><strong>├──</strong> - Ramificación en el árbol</li>
+                <li><strong>└──</strong> - Última ramificación</li>
+                <li><strong>│</strong> - Línea vertical de continuidad</li>
+            </ul>
+
+            <h3>Reglas Importantes</h3>
+            <ul class="doc-list">
+                <li>La indentación determina la profundidad en el árbol</li>
+                <li>Usa emojis 📁 y 📄 para diferenciar tipos</li>
+                <li>Los nombres de carpetas deben terminar con /</li>
+                <li>Utiliza caracteres ASCII estándar para drawing del árbol</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Ejemplos Detallados</h2>
+
+            <h3>Ejemplo 1: Proyecto Web Simple</h3>
+            <div class="code-block">
+website/
+├── 📁 css/
+│   └── 📄 style.css
+├── 📁 js/
+│   └── 📄 script.js
+├── 📁 images/
+├── 📄 index.html
+└── 📄 README.md
+            </div>
+
+            <h3>Ejemplo 2: API REST</h3>
+            <div class="code-block">
+api-backend/
+├── 📁 src/
+│   ├── 📁 routes/
+│   │   ├── 📄 users.js
+│   │   └── 📄 products.js
+│   ├── 📁 controllers/
+│   │   ├── 📄 userController.js
+│   │   └── 📄 productController.js
+│   ├── 📁 models/
+│   │   ├── 📄 User.js
+│   │   └── 📄 Product.js
+│   └── 📄 server.js
+├── 📄 package.json
+└── 📄 .env
+            </div>
+
+            <h3>Ejemplo 3: Aplicación React</h3>
+            <div class="code-block">
+react-app/
+├── 📁 src/
+│   ├── 📁 components/
+│   │   ├── 📁 Button/
+│   │   │   ├── 📄 Button.jsx
+│   │   │   └── 📄 Button.css
+│   │   └── 📁 Card/
+│   │       ├── 📄 Card.jsx
+│   │       └── 📄 Card.css
+│   ├── 📁 pages/
+│   │   ├── 📄 Home.jsx
+│   │   └── 📄 About.jsx
+│   ├── 📄 App.jsx
+│   └── 📄 index.js
+├── 📁 public/
+│   └── 📄 index.html
+└── 📄 package.json
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Opciones de Línea de Comandos</h2>
+
+            <h3>Sintaxis Básica</h3>
+            <div class="code-block">
+node index.js [archivo] [nombre-proyecto]
+            </div>
+
+            <ul class="doc-list">
+                <li><code style="background: #f0f0f0; padding: 0.2rem 0.4rem;">[archivo]</code> - Ruta al archivo de plano</li>
+                <li><code style="background: #f0f0f0; padding: 0.2rem 0.4rem;">[nombre-proyecto]</code> - Nombre de la carpeta a crear</li>
+            </ul>
+
+            <h3>Ejemplos</h3>
+            <div class="code-block">
+# Usar un archivo de plano
+node index.js ejemplos/ejemplo-web.txt mi-app
+
+# Usar archivo desde ruta absoluta
+node index.js C:\mis-plantillas\plantilla.txt nuevo-proyecto
+
+# Usar archivo relativo
+node index.js ./plantillas/api.txt backend-api
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Solución de Problemas</h2>
+
+            <h3>El archivo de plano no se encuentra</h3>
+            <div class="highlight">
+                <p><strong>Problema:</strong> Error "El archivo no existe"</p>
+                <p><strong>Solución:</strong> Verifica que el archivo exista y que la ruta sea correcta. Usa rutas relativas desde la carpeta del proyecto.</p>
+            </div>
+
+            <h3>Permisos denegados</h3>
+            <div class="highlight">
+                <p><strong>Problema:</strong> Error "Permiso denegado"</p>
+                <p><strong>Solución:</strong> Asegúrate de tener permisos de escritura en la carpeta destino. En Linux/Mac, prueba con sudo si es necesario.</p>
+            </div>
+
+            <h3>Caracteres especiales no válidos</h3>
+            <div class="highlight">
+                <p><strong>Problema:</strong> Error al crear la estructura</p>
+                <p><strong>Solución:</strong> Evita caracteres especiales en nombres de carpetas/archivos. Usa solo letras, números, guiones y guiones bajos.</p>
+            </div>
+        </div>
+
+        <div class="highlight" style="margin-top: 3rem;">
+            <h3 style="color: var(--color-primary); margin-bottom: 1rem;">¿Necesitas más ayuda?</h3>
+            <p>Consulta el archivo <a href="https://github.com/Diego-20000/arquitecto-proyectos" target="_blank" style="color: var(--color-accent); text-decoration: none;">README.md</a> en el repositorio de GitHub o crea un <a href="https://github.com/Diego-20000/arquitecto-proyectos/issues" target="_blank" style="color: var(--color-accent); text-decoration: none;">issue</a> si encuentras un problema.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Arquitecto</h4>
+                <p>Documentación completa y ejemplos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces</h4>
+                <ul style="list-style: none;">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="features.html">Características</a></li>
+                    <li><a href="examples.html">Ejemplos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>GitHub</h4>
+                <ul style="list-style: none;">
+                    <li><a href="https://github.com/Diego-20000/arquitecto-proyectos" target="_blank">Repositorio</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Licencia</h4>
+                <p>MIT License</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

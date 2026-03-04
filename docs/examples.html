@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos - Arquitecto de Proyectos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #0B1C2D;
+            --color-secondary: #3A4F6B;
+            --color-accent: #2E9BFF;
+            --color-light: #E8F1F9;
+            --color-bg: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--color-primary);
+            background-color: var(--color-bg);
+        }
+
+        nav {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--color-accent);
+        }
+
+        nav .logo {
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-right: auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--color-primary);
+            text-align: center;
+        }
+
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .example-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .example-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+
+        .example-header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .example-header h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .example-content {
+            padding: 2rem;
+        }
+
+        .example-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .code-preview {
+            background: #f5f5f5;
+            border-left: 4px solid var(--color-accent);
+            padding: 1rem;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+            color: #333;
+        }
+
+        .example-content ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .example-content ul li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #666;
+        }
+
+        .example-content ul li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section h4 {
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--color-accent);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="logo">📐 Arquitecto</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="features.html">Características</a></li>
+            <li><a href="examples.html">Ejemplos</a></li>
+            <li><a href="documentation.html">Documentación</a></li>
+            <li><a href="contributing.html">Contribuir</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Ejemplos y Plantillas</h1>
+        <p>Descubre cómo usar Arquitecto de Proyectos en diferentes escenarios</p>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Ejemplos Incluidos</h2>
+
+        <div class="examples-grid">
+            <div class="example-card">
+                <div class="example-header">
+                    <h3>📱 Proyecto Web React</h3>
+                    <p>Estructura moderna para aplicaciones web</p>
+                </div>
+                <div class="example-content">
+                    <p>Estructura completa y profesional para comenzar un proyecto React con todo lo necesario incluido.</p>
+                    
+                    <div class="code-preview"><code>node index.js examples/ejemplo-web.txt mi-app</code></div>
+
+                    <p><strong>Incluye:</strong></p>
+                    <ul>
+                        <li>Componentes React organizados</li>
+                        <li>Carpeta de estilos y assets</li>
+                        <li>Configuración de build</li>
+                        <li>Estructura de páginas</li>
+                        <li>Utilities y hooks customizados</li>
+                    </ul>
+
+                    <p style="font-size: 0.9rem; color: #999; margin-top: 1.5rem;">Archivo: <code>ejemplos/ejemplo-web.txt</code></p>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <div class="example-header">
+                    <h3>🔗 API REST con Express</h3>
+                    <p>Servidor backend bien estructurado</p>
+                </div>
+                <div class="example-content">
+                    <p>Estructura profesional para un servidor API REST usando Express.js con arquitectura escalable.</p>
+                    
+                    <div class="code-preview"><code>node index.js examples/ejemplo-api.txt mi-api</code></div>
+
+                    <p><strong>Incluye:</strong></p>
+                    <ul>
+                        <li>Carpetas de rutas organizadas</li>
+                        <li>Controladores modulares</li>
+                        <li>Modelos de datos</li>
+                        <li>Middleware y utilidades</li>
+                        <li>Configuración centralizada</li>
+                    </ul>
+
+                    <p style="font-size: 0.9rem; color: #999; margin-top: 1.5rem;">Archivo: <code>ejemplos/ejemplo-api.txt</code></p>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <div class="example-header">
+                    <h3>🎨 Sitio HTML/CSS/JS</h3>
+                    <p>Proyecto web estático simple</p>
+                </div>
+                <div class="example-content">
+                    <p>Estructura básica para sitios web estáticos con HTML, CSS y JavaScript vanilla.</p>
+                    
+                    <div class="code-preview"><code>node index.js examples/ejemplo-simple.txt mi-sitio</code></div>
+
+                    <p><strong>Incluye:</strong></p>
+                    <ul>
+                        <li>Páginas HTML organizadas</li>
+                        <li>Estilos CSS modular</li>
+                        <li>Scripts JavaScript</li>
+                        <li>Carpeta de imágenes y assets</li>
+                        <li>Estructura SEO-friendly</li>
+                    </ul>
+
+                    <p style="font-size: 0.9rem; color: #999; margin-top: 1.5rem;">Archivo: <code>ejemplos/ejemplo-simple.txt</code></p>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin: 4rem 0; padding: 2rem; background: var(--color-light); border-radius: 10px; text-align: center;">
+            <h2 style="margin-bottom: 1rem; color: var(--color-primary);">¿Quieres crear tu propia plantilla?</h2>
+            <p style="margin-bottom: 2rem; color: #666;">Descubre cómo crear archivos de plano personalizados en la documentación completa.</p>
+            <a href="documentation.html" style="display: inline-block; background: var(--color-accent); color: white; padding: 0.75rem 2rem; border-radius: 5px; text-decoration: none; font-weight: 600;">Ver Documentación Completa</a>
+        </div>
+
+        <div style="margin-top: 4rem;">
+            <h2 style="margin-bottom: 2rem; color: var(--color-primary); text-align: center;">Cómo Usar Los Ejemplos</h2>
+            
+            <div style="background: white; border: 1px solid #e0e0e0; border-radius: 10px; padding: 2rem; margin-bottom: 2rem;">
+                <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Paso 1: Clonar el Repositorio</h3>
+                <div class="code-preview">
+git clone https://github.com/Diego-20000/arquitecto-proyectos.git
+cd arquitecto-proyectos
+                </div>
+            </div>
+
+            <div style="background: white; border: 1px solid #e0e0e0; border-radius: 10px; padding: 2rem; margin-bottom: 2rem;">
+                <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Paso 2: Ejecutar un Ejemplo</h3>
+                <div class="code-preview">
+node index.js examples/ejemplo-web.txt mi-proyecto-web
+                </div>
+            </div>
+
+            <div style="background: white; border: 1px solid #e0e0e0; border-radius: 10px; padding: 2rem;">
+                <h3 style="color: var(--color-primary); margin-bottom: 1rem;">Paso 3: Navegar a tu Proyecto</h3>
+                <div class="code-preview">
+cd mi-proyecto-web
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Arquitecto</h4>
+                <p>Generador de estructuras rápido y eficiente.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces</h4>
+                <ul style="list-style: none;">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="features.html">Características</a></li>
+                    <li><a href="examples.html">Ejemplos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>GitHub</h4>
+                <ul style="list-style: none;">
+                    <li><a href="https://github.com/Diego-20000/arquitecto-proyectos" target="_blank">Repositorio</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Licencia</h4>
+                <p>MIT License</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

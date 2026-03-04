@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contribuir - Arquitecto de Proyectos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #0B1C2D;
+            --color-secondary: #3A4F6B;
+            --color-accent: #2E9BFF;
+            --color-light: #E8F1F9;
+            --color-bg: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--color-primary);
+            background-color: var(--color-bg);
+        }
+
+        nav {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--color-accent);
+        }
+
+        nav .logo {
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-right: auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section h2 {
+            color: var(--color-primary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--color-accent);
+        }
+
+        .section h3 {
+            color: var(--color-secondary);
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .section p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .code-block {
+            background: #f5f5f5;
+            border-left: 4px solid var(--color-accent);
+            padding: 1.5rem;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            color: #333;
+        }
+
+        .doc-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .doc-list li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .doc-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .highlight {
+            background: var(--color-light);
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin: 1.5rem 0;
+        }
+
+        .highlight strong {
+            color: var(--color-primary);
+        }
+
+        .step-box {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .step-box h3 {
+            color: var(--color-primary);
+        }
+
+        footer {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section h4 {
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--color-accent);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="logo">📐 Arquitecto</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="features.html">Características</a></li>
+            <li><a href="examples.html">Ejemplos</a></li>
+            <li><a href="documentation.html">Documentación</a></li>
+            <li><a href="contributing.html">Contribuir</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Contribuir al Proyecto</h1>
+        <p>¡Tu ayuda es bienvenida! Aprende cómo contribuir a Arquitecto de Proyectos</p>
+    </header>
+
+    <div class="container">
+        <div class="section">
+            <h2>Formas de Contribuir</h2>
+            
+            <p>Hay muchas maneras en las que puedes ayudar a mejorar Arquitecto de Proyectos:</p>
+
+            <ul class="doc-list">
+                <li>Reportar bugs y problemas</li>
+                <li>Sugerir nuevas características</li>
+                <li>Mejorar la documentación</li>
+                <li>Crear plantillas/ejemplos nuevos</li>
+                <li>Optimizar el código existente</li>
+                <li>Ayudar al testing y QA</li>
+                <li>Compartir el proyecto con otros</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Guía Para Reportar Bugs</h2>
+
+            <p>Si encuentras un error o comportamiento inesperado, por favor reportalo creando un issue en GitHub.</p>
+
+            <div class="step-box">
+                <h3>Paso 1: Verifica si ya existe el issue</h3>
+                <p>Busca en <a href="https://github.com/Diego-20000/arquitecto-proyectos/issues" target="_blank" style="color: var(--color-accent);">la lista de issues</a> para asegurarte de que el problema aún no ha sido reportado.</p>
+            </div>
+
+            <div class="step-box">
+                <h3>Paso 2: Crea un nuevo issue</h3>
+                <p>Haz clic en "New Issue" y proporciona la siguiente información:</p>
+                <ul class="doc-list" style="margin-top: 1rem;">
+                    <li><strong>Título descriptivo:</strong> Un resumen claro del problema</li>
+                    <li><strong>Descripción detallada:</strong> Qué esperabas que pasara y qué pasó realmente</li>
+                    <li><strong>Pasos para reproducir:</strong> Instrucciones exactas para reproducir el bug</li>
+                    <li><strong>Información del sistema:</strong> SO, versión de Node.js, etc.</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <h3>Paso 3: Ejemplo de buen reporte</h3>
+                <div class="code-block">
+Título: El parser no interpreta archivos con líneas vacías
+
+Descripción:
+Cuando intento usar un archivo de plano que contiene líneas en blanco, 
+el parser devuelve un error de formato inválido.
+
+Pasos para reproducir:
+1. Crear archivo "test.txt" con líneas vacías
+2. Ejecutar: node index.js test.txt mi-proyecto
+3. Ver error en consola
+
+Sistema:
+- OS: Windows 10
+- Node.js: v14.17.0
+- npm: 6.14.13
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Sugerir Nuevas Características</h2>
+
+            <p>¿Tienes una idea para mejorar Arquitecto de Proyectos? ¡Nos encantaría escucharla!</p>
+
+            <div class="step-box">
+                <h3>Cómo proponer una característica</h3>
+                <p>Abre un nuevo issue con el etiqueta <code style="background: #f0f0f0; padding: 0.2rem 0.4rem;">enhancement</code> y explica:</p>
+                <ul class="doc-list" style="margin-top: 1rem;">
+                    <li>Cuál es el problema que resolvería</li>
+                    <li>Cómo crees que debería funcionar</li>
+                    <li>Ejemplos de uso si es posible</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Configurar el Entorno de Desarrollo</h2>
+
+            <h3>1. Hacer Fork del repositorio</h3>
+            <p>Ve a <a href="https://github.com/Diego-20000/arquitecto-proyectos" target="_blank" style="color: var(--color-accent);">GitHub</a> y haz clic en "Fork".</p>
+
+            <h3>2. Clonar tu fork</h3>
+            <div class="code-block">
+git clone https://github.com/TU-USUARIO/arquitecto-proyectos.git
+cd arquitecto-proyectos
+            </div>
+
+            <h3>3. Añadir upstream</h3>
+            <div class="code-block">
+git remote add upstream https://github.com/Diego-20000/arquitecto-proyectos.git
+            </div>
+
+            <h3>4. Instalar dependencias</h3>
+            <div class="code-block">
+npm install
+            </div>
+
+            <h3>5. Crear una rama</h3>
+            <div class="code-block">
+git checkout -b mi-mejora
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Hacer Cambios y Crear un Pull Request</h2>
+
+            <div class="step-box">
+                <h3>Paso 1: Hacer tus cambios</h3>
+                <p>Modifica los archivos según sea necesario. Asegúrate de:</p>
+                <ul class="doc-list">
+                    <li>Seguir el estilo de código existente</li>
+                    <li>Añadir comentarios donde sea necesario</li>
+                    <li>Probar tus cambios a fondo</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <h3>Paso 2: Hacer commit</h3>
+                <div class="code-block">
+git add .
+git commit -m "feat: Descripción clara de tu cambio"
+                </div>
+                <p style="margin-top: 1rem;">Usa mensajes de commit descriptivos. Ejemplos:</p>
+                <ul class="doc-list">
+                    <li>feat: Agregar soporte para archivos .json</li>
+                    <li>fix: Corregir error en validación de nombres</li>
+                    <li>docs: Mejorar documentación del parser</li>
+                    <li>refactor: Simplificar lógica en builder.js</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <h3>Paso 3: Push a tu fork</h3>
+                <div class="code-block">
+git push origin mi-mejora
+                </div>
+            </div>
+
+            <div class="step-box">
+                <h3>Paso 4: Crear Pull Request</h3>
+                <p>Ve a GitHub y haz clic en "Compare & Pull Request". Describe:</p>
+                <ul class="doc-list">
+                    <li>Qué cambiaste y por qué</li>
+                    <li>Cualquier issue relacionado (#número)</li>
+                    <li>Cómo se puede probar el cambio</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Estándares de Código</h2>
+
+            <h3>JavaScript</h3>
+            <ul class="doc-list">
+                <li>Usa ESLint para validar el código</li>
+                <li>Usa Prettier para formatear</li>
+                <li>Sigue camelCase para variables y funciones</li>
+                <li>Usa const por defecto, let si es necesario, nunca var</li>
+                <li>Añade comentarios para lógica compleja</li>
+            </ul>
+
+            <h3>Commits</h3>
+            <ul class="doc-list">
+                <li>Commits atómicos (un cambio por commit)</li>
+                <li>Mensajes claros y en inglés/español consistente</li>
+                <li>Prefijos: feat, fix, docs, refactor, test, style</li>
+            </ul>
+        </div>
+
+        <div class="highlight" style="background: linear-gradient(135deg, var(--color-light) 0%, rgba(46, 155, 255, 0.1) 100%); margin-top: 3rem;">
+            <h3 style="color: var(--color-primary); margin-bottom: 1rem;">¡Gracias por tu interés en contribuir!</h3>
+            <p>Tu tiempo y esfuerzo ayudan a hacer Arquitecto de Proyectos más útil para todos. Cada contribución, sin importar lo pequeña que sea, es valiosa.</p>
+            <p style="margin-top: 1rem;">Si tienes preguntas, no dudes en preguntar en un issue. ¡La comunidad está aquí para ayudarte!</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Arquitecto</h4>
+                <p>Proyecto de código abierto y colaborativo.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces</h4>
+                <ul style="list-style: none;">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="features.html">Características</a></li>
+                    <li><a href="documentation.html">Docs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>GitHub</h4>
+                <ul style="list-style: none;">
+                    <li><a href="https://github.com/Diego-20000/arquitecto-proyectos" target="_blank">Repositorio</a></li>
+                    <li><a href="https://github.com/Diego-20000/arquitecto-proyectos/issues" target="_blank">Issues</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Licencia</h4>
+                <p>MIT License</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

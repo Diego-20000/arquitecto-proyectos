@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Características - Arquitecto de Proyectos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #0B1C2D;
+            --color-secondary: #3A4F6B;
+            --color-accent: #2E9BFF;
+            --color-light: #E8F1F9;
+            --color-bg: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--color-primary);
+            background-color: var(--color-bg);
+        }
+
+        nav {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--color-accent);
+        }
+
+        nav .logo {
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-right: auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--color-primary);
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 2.5rem;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #666;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section h4 {
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--color-accent);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="logo">📐 Arquitecto</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="features.html">Características</a></li>
+            <li><a href="examples.html">Ejemplos</a></li>
+            <li><a href="documentation.html">Documentación</a></li>
+            <li><a href="contributing.html">Contribuir</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Características Detalladas</h1>
+        <p>Conoce todo lo que puedes hacer con Arquitecto de Proyectos</p>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Funcionalidades Principales</h2>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Generación Rápida</h3>
+                <p>Crea estructuras complejas en cuestión de segundos, sin necesidad de crear manualmente cada carpeta y archivo.</p>
+                <ul class="feature-list">
+                    <li>Procesamiento ultrarrápido</li>
+                    <li>Creación recursiva de directorios</li>
+                    <li>Soporte para miles de archivos</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📝</div>
+                <h3>Formato Simple y Legible</h3>
+                <p>Define tus estructuras usando archivos de texto plano con un formato intuitivo y fácil de entender.</p>
+                <ul class="feature-list">
+                    <li>Sintaxis similar a Tree</li>
+                    <li>Emojis para identificación visual</li>
+                    <li>Indentación clara</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Totalmente Flexible</h3>
+                <p>Personaliza cada aspecto de tus proyectos según tus necesidades específicas y preferencias.</p>
+                <ul class="feature-list">
+                    <li>Estructura configurable</li>
+                    <li>Múltiples plantillas incluidas</li>
+                    <li>Fácil de extender</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>Funcionamiento Offline</h3>
+                <p>No requiere conexión a internet ni depende de servicios externos. Control total en tu máquina.</p>
+                <ul class="feature-list">
+                    <li>Sin APIs externas</li>
+                    <li>Sin tracking ni datos</li>
+                    <li>Completamente privado</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">💻</div>
+                <h3>CLI Intuitivo</h3>
+                <p>Interfaz de línea de comandos clara, con mensajes útiles y manejo de errores informativo.</p>
+                <ul class="feature-list">
+                    <li>Ayuda integrada</li>
+                    <li>Mensajes de error descriptivos</li>
+                    <li>Validación automática</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Seguro y Confiable</h3>
+                <p>Código auditable con validación de rutas para prevenir acceso no autorizado al sistema de archivos.</p>
+                <ul class="feature-list">
+                    <li>Prevención de path traversal</li>
+                    <li>Código abierto</li>
+                    <li>Sin dependencias externas</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>Documentación Completa</h3>
+                <p>Documentación exhaustiva con ejemplos, guías y casos de uso reales para todos los niveles.</p>
+                <ul class="feature-list">
+                    <li>Guía de inicio rápido</li>
+                    <li>Ejemplos prácticos</li>
+                    <li>FAQ detallado</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔄</div>
+                <h3>Múltiples Ejemplos</h3>
+                <p>Incluye plantillas predefinidas para una variedad de tipos de proyectos comunes.</p>
+                <ul class="feature-list">
+                    <li>Proyectos web (React)</li>
+                    <li>APIs REST (Express)</li>
+                    <li>Sitios estáticos</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚙️</div>
+                <h3>Configuración Modular</h3>
+                <p>Arquitectura bien estructurada y modular que facilita el entendimiento y extensión del código.</p>
+                <ul class="feature-list">
+                    <li>Módulos bien separados</li>
+                    <li>Fácil de mantener</li>
+                    <li>Extensible</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="margin-top: 5rem; padding: 2rem; background: var(--color-light); border-radius: 10px; text-align: center;">
+            <h2 style="margin-bottom: 1rem;">¿Listo para empezar?</h2>
+            <p style="margin-bottom: 2rem;">Descubre cómo estas características pueden mejorar tu flujo de trabajo.</p>
+            <a href="documentation.html" style="display: inline-block; background: var(--color-accent); color: white; padding: 0.75rem 2rem; border-radius: 5px; text-decoration: none; font-weight: 600;">Ver Documentación</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Arquitecto</h4>
+                <p>Generador de estructuras de proyectos rápido y confiable.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces</h4>
+                <ul style="list-style: none;">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="features.html">Características</a></li>
+                    <li><a href="documentation.html">Docs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>GitHub</h4>
+                <ul style="list-style: none;">
+                    <li><a href="https://github.com/Diego-20000/arquitecto-proyectos" target="_blank">Repositorio</a></li>
+                    <li><a href="https://github.com/Diego-20000/arquitecto-proyectos/issues" target="_blank">Issues</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Licencia</h4>
+                <p>MIT - Libre de usar</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

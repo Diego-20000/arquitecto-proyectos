@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arquitecto de Proyectos - Herramienta Profesional</title>
+    <title>Arquitecto de Proyectos - Generador de Estructuras</title>
     <style>
         * {
             margin: 0;
@@ -12,378 +12,575 @@
         }
 
         :root {
-            /* Verde lujo */
-            --verde-dark: #1F2D1E;
-            --verde-medium: #2E3F2F;
-            --verde-light: #4A5D4A;
-            
-            /* Azul lujo */
-            --azul-dark: #0B1C2D;
-            --azul-medium: #1E2F4A;
-            --azul-light: #3A4F6B;
-            
-            /* Rojo lujo */
-            --rojo-dark: #4B0F0F;
-            --rojo-medium: #6B1E1E;
-            --rojo-light: #8B3A3A;
-            
-            /* Dorado */
-            --dorado-dark: #5C4A1A;
-            --dorado-medium: #8A6F2F;
-            --dorado-light: #C9A24D;
-            
-            /* Púrpura lujo */
-            --purpura-dark: #2A1538;
-            --purpura-medium: #4A2B5F;
-            --purpura-light: #6A4A7F;
-
-            /* Colores complementarios */
-            --white: #FFFFFF;
-            --gray-light: #F5F5F5;
-            --gray-medium: #E0E0E0;
+            --color-primary: #0B1C2D;
+            --color-secondary: #3A4F6B;
+            --color-accent: #2E9BFF;
+            --color-light: #E8F1F9;
+            --color-dark: #0B1C2D;
+            --color-text: #1a1a1a;
+            --color-bg: #ffffff;
+            --color-border: #e0e0e0;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, var(--verde-dark) 0%, var(--azul-dark) 100%);
-            color: var(--white);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            min-height: 100vh;
+            color: var(--color-text);
+            background-color: var(--color-bg);
+        }
+
+        /* Navegación */
+        nav {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--color-accent);
+        }
+
+        nav .logo {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--color-accent);
+            margin-right: auto;
         }
 
         /* Header */
         header {
-            background: linear-gradient(90deg, var(--verde-dark) 0%, var(--azul-dark) 100%);
-            padding: 60px 20px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            padding: 6rem 2rem;
             text-align: center;
-            border-bottom: 4px solid var(--dorado-light);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         }
 
         header h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            color: var(--dorado-light);
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
         }
 
-        header p {
-            font-size: 1.2em;
-            color: var(--gray-light);
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        header .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .icon-large {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        /* Botones */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--color-accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(46, 155, 255, 0.3);
+        }
+
+        .btn-secondary {
+            border-color: white;
+            color: white;
+            background-color: transparent;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         /* Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 0 2rem;
         }
 
-        /* Features Section */
-        .features {
+        /* Secciones */
+        .section {
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--color-primary);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            text-align: center;
+            color: var(--color-secondary);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Grid */
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 60px 0;
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
 
-        .feature-card {
-            background: rgba(255, 255, 255, 0.95);
-            color: var(--verde-dark);
-            padding: 30px;
+        .card {
+            background: white;
+            border: 1px solid var(--color-border);
             border-radius: 10px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid var(--dorado-light);
+            padding: 2rem;
+            transition: all 0.3s;
         }
 
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 50px rgba(201, 162, 77, 0.2);
+        .card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
         }
 
-        .feature-card h3 {
-            color: var(--azul-medium);
-            margin-bottom: 15px;
-            font-size: 1.5em;
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
 
-        .feature-card p {
-            color: #555;
+        .card h3 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            color: #666;
             line-height: 1.8;
         }
 
-        /* Tech Stack */
-        .tech-stack {
-            background: linear-gradient(135deg, var(--azul-medium) 0%, var(--purpura-medium) 100%);
-            padding: 40px;
-            border-radius: 10px;
-            margin: 60px 0;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        /* Características */
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
-        .tech-stack h2 {
-            color: var(--dorado-light);
-            margin-bottom: 30px;
-            text-align: center;
-            font-size: 2em;
-        }
-
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            text-align: center;
-        }
-
-        .tech-item {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 8px;
-            border: 2px solid var(--dorado-light);
-            transition: all 0.3s ease;
-        }
-
-        .tech-item:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.05);
-        }
-
-        .tech-item strong {
-            color: var(--dorado-light);
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        /* Examples Section */
-        .examples {
-            margin: 60px 0;
-        }
-
-        .examples h2 {
-            color: var(--dorado-light);
-            font-size: 2em;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .example-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .example-box {
-            background: linear-gradient(135deg, var(--verde-dark) 0%, var(--verde-medium) 100%);
-            padding: 30px;
-            border-radius: 10px;
-            border: 2px solid var(--dorado-light);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .example-box:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 50px rgba(201, 162, 77, 0.3);
-        }
-
-        .example-box h3 {
-            color: var(--dorado-light);
-            margin-bottom: 15px;
-            font-size: 1.3em;
-        }
-
-        .example-box p {
-            color: var(--gray-light);
-            font-size: 0.95em;
-            margin-bottom: 15px;
-        }
-
-        .example-box code {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 10px 15px;
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
             border-radius: 5px;
-            font-family: 'Courier New', monospace;
-            color: var(--dorado-light);
-            display: block;
-            overflow-x: auto;
-            font-size: 0.9em;
+            background-color: var(--color-light);
         }
 
-        /* CTA Button */
-        .cta-section {
-            text-align: center;
-            margin: 80px 0;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--dorado-medium) 0%, var(--dorado-light) 100%);
-            color: var(--verde-dark);
-            padding: 18px 50px;
-            border-radius: 50px;
-            font-size: 1.1em;
+        .feature-item::before {
+            content: "✓";
+            color: #4CAF50;
             font-weight: bold;
-            text-decoration: none;
-            box-shadow: 0 10px 30px rgba(201, 162, 77, 0.4);
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            font-size: 1.2rem;
+            min-width: 24px;
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(201, 162, 77, 0.6);
+        /* Code Block */
+        .code-block {
+            background-color: #f5f5f5;
+            border-left: 4px solid var(--color-accent);
+            padding: 1.5rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        .code-block code {
+            color: #333;
+        }
+
+        /* Ejemplos */
+        .example {
+            background: white;
+            border: 1px solid var(--color-border);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .example h4 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
         }
 
         /* Footer */
         footer {
-            background: var(--verde-dark);
-            color: var(--gray-light);
-            text-align: center;
-            padding: 30px;
-            margin-top: 100px;
-            border-top: 4px solid var(--dorado-light);
+            background-color: var(--color-primary);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 5rem;
         }
 
-        footer p {
-            margin-bottom: 10px;
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-bottom: 2rem;
         }
 
-        footer a {
-            color: var(--dorado-light);
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
 
-        footer a:hover {
-            color: var(--dorado-medium);
+        .footer-section a:hover {
+            color: var(--color-accent);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             header h1 {
-                font-size: 2em;
+                font-size: 2rem;
             }
 
-            .container {
-                padding: 20px 10px;
+            .section-title {
+                font-size: 1.8rem;
             }
 
-            .features,
-            .tech-grid,
-            .example-grid {
-                grid-template-columns: 1fr;
+            nav ul {
+                gap: 1rem;
             }
+
+            nav a {
+                font-size: 0.85rem;
+            }
+
+            .btn-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Colores alternativos para badges */
+        .badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-green {
+            background-color: #1F2D1E;
+            color: #C9D9B8;
+        }
+
+        .badge-blue {
+            background-color: #0B1C2D;
+            color: #A8C5DF;
+        }
+
+        .badge-red {
+            background-color: #4B0F0F;
+            color: #F0B4B4;
+        }
+
+        .badge-gold {
+            background-color: #5C4A1A;
+            color: #F5D89A;
+        }
+
+        .badge-purple {
+            background-color: #2A1538;
+            color: #D9B8E8;
         }
     </style>
 </head>
 <body>
+    <!-- Navegación -->
+    <nav>
+        <ul>
+            <li><a href="index.html" class="logo">📐 Arquitecto</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="features.html">Características</a></li>
+            <li><a href="examples.html">Ejemplos</a></li>
+            <li><a href="documentation.html">Documentación</a></li>
+            <li><a href="contributing.html">Contribuir</a></li>
+        </ul>
+    </nav>
+
     <!-- Header -->
     <header>
-        <h1>🏗️ Arquitecto de Proyectos</h1>
-        <p>Herramienta profesional para generar estructuras de proyectos</p>
+        <div class="icon-large">📐</div>
+        <h1>Arquitecto de Proyectos</h1>
+        <p class="subtitle">Generador inteligente de estructuras de proyectos desde archivos de texto plano</p>
+        <div class="btn-group">
+            <a href="documentation.html" class="btn btn-primary">Empezar Ahora</a>
+            <a href="https://github.com/Diego-20000/arquitecto-proyectos" class="btn btn-secondary">Ver en GitHub</a>
+        </div>
     </header>
 
-    <!-- Main Content -->
-    <div class="container">
-        <!-- Features -->
-        <section class="features">
-            <div class="feature-card">
-                <h3>⚡ Sin APIs Externas</h3>
-                <p>Funciona 100% en tu máquina. No depende de servicios externos. Control total sobre tus datos.</p>
+    <!-- Sección Principal -->
+    <section class="section">
+        <div class="container">
+            <div style="text-align: center; line-height: 2; color: #666; margin-bottom: 3rem;">
+                <p style="font-size: 1.1rem;">
+                    Una herramienta poderosa y versátil para generar estructuras de proyectos profesionales
+                    de forma rápida y eficiente. Perfecta para iniciadores, desarrolladores y equipos.
+                </p>
             </div>
-            <div class="feature-card">
-                <h3>🎯 Fácil de Usar</h3>
-                <p>Solo necesitas un archivo de texto. Describe la estructura con símbolos simples y ¡listo!</p>
-            </div>
-            <div class="feature-card">
-                <h3>⚙️ Flexible</h3>
-                <p>Soporta cualquier tipo de estructura. Perfecta para todos tus proyectos.</p>
-            </div>
-            <div class="feature-card">
-                <h3>🚀 Rápido</h3>
-                <p>Genera proyectos en segundos. Automatiza tareas repetitivas y ahorra tiempo.</p>
-            </div>
-            <div class="feature-card">
-                <h3>📚 Bien Documentada</h3>
-                <p>Documentación completa, ejemplos listos para usar y guías detalladas.</p>
-            </div>
-            <div class="feature-card">
-                <h3>💼 Profesional</h3>
-                <p>Código limpio, bien estructurado y listo para producción.</p>
-            </div>
-        </section>
 
-        <!-- Tech Stack -->
-        <section class="tech-stack">
-            <h2>Stack Tecnológico</h2>
-            <div class="tech-grid">
-                <div class="tech-item">
-                    <strong>Node.js</strong>
-                    <span>v12+</span>
+            <h2 class="section-title">Características Principales</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <h3>Súper Rápido</h3>
+                    <p>Genera estructuras complejas en segundos. Sin esperas, sin complicaciones.</p>
                 </div>
-                <div class="tech-item">
-                    <strong>JavaScript</strong>
-                    <span>ES2021</span>
+                <div class="card">
+                    <div class="card-icon">📝</div>
+                    <h3>Formato Simple</h3>
+                    <p>Archivos de texto plano con estructura clara y fácil de entender.</p>
                 </div>
-                <div class="tech-item">
-                    <strong>Git</strong>
-                    <span>Control de versiones</span>
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Flexible</h3>
+                    <p>Personaliza cualquier estructura según tus necesidades específicas.</p>
                 </div>
-                <div class="tech-item">
-                    <strong>GitHub</strong>
-                    <span>Repositorio público</span>
+                <div class="card">
+                    <div class="card-icon">🚀</div>
+                    <h3>Sin Dependencias</h3>
+                    <p>Funciona completamente offline. No requiere APIs externas.</p>
                 </div>
-                <div class="tech-item">
-                    <strong>ESLint</strong>
-                    <span>Linting</span>
+                <div class="card">
+                    <div class="card-icon">💻</div>
+                    <h3>CLI Intuitivo</h3>
+                    <p>Interfaz de línea de comandos clara y fácil de usar.</p>
                 </div>
-                <div class="tech-item">
-                    <strong>Prettier</strong>
-                    <span>Formateo</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Examples -->
-        <section class="examples">
-            <h2>Ejemplos Disponibles</h2>
-            <div class="example-grid">
-                <div class="example-box">
-                    <h3>🌐 Web (React)</h3>
-                    <p>Estructura completa para sitios web modernos con React, componentes y estilos.</p>
-                    <code>node index.js examples/ejemplo-web.txt</code>
-                </div>
-                <div class="example-box">
-                    <h3>🔌 API REST (Express)</h3>
-                    <p>Estructura para APIs REST con controladores, modelos y rutas organizadas.</p>
-                    <code>node index.js examples/ejemplo-api.txt</code>
-                </div>
-                <div class="example-box">
-                    <h3>📄 HTML Simple</h3>
-                    <p>Estructura básica HTML, CSS y JavaScript para proyectos sencillos.</p>
-                    <code>node index.js examples/ejemplo-simple.txt</code>
+                <div class="card">
+                    <div class="card-icon">🔒</div>
+                    <h3>Seguro</h3>
+                    <p>Código auditable y sin riesgos de seguridad.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- CTA -->
-        <section class="cta-section">
-            <h2 style="color: var(--dorado-light); margin-bottom: 30px; font-size: 2em;">¿Listo para comenzar?</h2>
-            <a href="https://github.com/Diego-20000/arquitecto-proyectos" class="cta-button">
-                Ir al Repositorio en GitHub →
-            </a>
-        </section>
-    </div>
+    <!-- Sección de Instalación Rápida -->
+    <section class="section" style="background-color: var(--color-light);">
+        <div class="container">
+            <h2 class="section-title">Instalación Rápida</h2>
+            
+            <div class="example">
+                <h4>1. Clonar el repositorio</h4>
+                <div class="code-block"><code>git clone https://github.com/Diego-20000/arquitecto-proyectos.git
+cd arquitecto-proyectos</code></div>
+            </div>
+
+            <div class="example">
+                <h4>2. Instalar dependencias (opcional)</h4>
+                <div class="code-block"><code>npm install</code></div>
+            </div>
+
+            <div class="example">
+                <h4>3. Usar la herramienta</h4>
+                <div class="code-block"><code>node index.js ejemplos/ejemplo-web.txt mi-proyecto</code></div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="documentation.html" class="btn btn-primary">Ver Documentación Completa</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Stack Tecnológico -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Stack Tecnológico</h2>
+            <p class="section-subtitle">Construido con tecnologías modernas y confiables</p>
+
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <div style="display: inline-flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🟩</div>
+                        <p>Node.js v12+</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">📝</div>
+                        <p>JavaScript ES2021</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔧</div>
+                        <p>ESLint & Prettier</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; margin-bottom: 0.5rem;">📚</div>
+                        <p>Documentación Completa</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>Node.js</h3>
+                    <p>Entorno de ejecución JavaScript moderno y eficiente.</p>
+                </div>
+                <div class="card">
+                    <h3>Módulos Nativos</h3>
+                    <p>Usa solo módulos nativos de Node.js (fs, path).</p>
+                </div>
+                <div class="card">
+                    <h3>Git Integration</h3>
+                    <p>Integración natural con Git y GitHub.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Ejemplos -->
+    <section class="section" style="background-color: var(--color-light);">
+        <div class="container">
+            <h2 class="section-title">Ejemplos Incluidos</h2>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>📱 Proyecto Web React</h3>
+                    <p>Estructura completa para una aplicación React moderna con componentes, estilos y configuración.</p>
+                    <div style="margin-top: 1rem; color: #999;">ejemplo-web.txt</div>
+                </div>
+                <div class="card">
+                    <h3>🔗 API Express</h3>
+                    <p>Estructura para un servidor Express con rutas, controladores, modelos y documentación.</p>
+                    <div style="margin-top: 1rem; color: #999;">ejemplo-api.txt</div>
+                </div>
+                <div class="card">
+                    <h3>🎨 Sitio HTML/CSS</h3>
+                    <p>Estructura simple para un sitio web estático con HTML, CSS y JavaScript.</p>
+                    <div style="margin-top: 1rem; color: #999;">ejemplo-simple.txt</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="examples.html" class="btn btn-primary">Explorar Todos los Ejemplos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección CTA Final -->
+    <section class="section">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title">¿Listo para Comenzar?</h2>
+            <p class="section-subtitle">Crea tu primera estructura de proyecto en menos de un minuto</p>
+            <div class="btn-group">
+                <a href="documentation.html" class="btn btn-primary">Documentación Completa</a>
+                <a href="examples.html" class="btn btn-secondary">Ver Ejemplos</a>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
-        <p><strong>Arquitecto de Proyectos</strong> - v0.1.0</p>
-        <p>Creado por <a href="https://github.com/Diego-20000">Diego-20000</a></p>
-        <p>Licencia MIT - Completamente libre y de código abierto</p>
-        <p style="margin-top: 20px; font-size: 0.9em;">⭐ Si te fue útil, dale una estrella en GitHub</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Arquitecto</h4>
+                <p>Generador de estructuras de proyectos rápido, flexible y potente.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="features.html">Características</a></li>
+                    <li><a href="documentation.html">Documentación</a></li>
+                    <li><a href="examples.html">Ejemplos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Recursos</h4>
+                <ul>
+                    <li><a href="https://github.com/Diego-20000/arquitecto-proyectos" target="_blank">GitHub</a></li>
+                    <li><a href="contributing.html">Contribuir</a></li>
+                    <li><a href="https://github.com/Diego-20000/arquitecto-proyectos/issues" target="_blank">Issues</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Licencia</h4>
+                <p>MIT License - Libre para usar y modificar</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Arquitecto de Proyectos. Todos los derechos reservados.</p>
+        </div>
     </footer>
 </body>
 </html>
