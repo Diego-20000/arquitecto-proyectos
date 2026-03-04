@@ -1,0 +1,69 @@
+sitio-astro-moderno/
+├── 📁 src/
+│   ├── 📁 layouts/
+│   │   ├── 📄 Layout.astro
+│   │   ├── 📄 BlogLayout.astro
+│   │   └── 📄 DocsLayout.astro
+│   ├── 📁 pages/
+│   │   ├── 📄 index.astro
+│   │   ├── 📄 about.astro
+│   │   ├── 📁 blog/
+│   │   │   ├── 📄 [slug].astro
+│   │   │   └── 📄 index.astro
+│   │   ├── 📁 docs/
+│   │   │   ├── 📄 [...slug].astro
+│   │   │   └── 📄 index.astro
+│   │   ├── 📄 contact.astro
+│   │   └── 📄 404.astro
+│   ├── 📁 components/
+│   │   ├── 📁 sections/
+│   │   │   ├── 📄 Hero.astro
+│   │   │   ├── 📄 Features.astro
+│   │   │   ├── 📄 Testimonials.astro
+│   │   │   └── 📄 CTA.astro
+│   │   ├── 📁 common/
+│   │   │   ├── 📄 Header.astro
+│   │   │   ├── 📄 Navigation.astro
+│   │   │   ├── 📄 Footer.astro
+│   │   │   └── 📄 ThemeToggle.astro
+│   │   └── 📁 ui/
+│   │       ├── 📄 Button.astro
+│   │       ├── 📄 Card.astro
+│   │       └── 📄 Badge.astro
+│   ├── 📁 content/
+│   │   ├── 📁 blog/
+│   │   │   ├── 📄 first-post.md
+│   │   │   └── 📄 config.ts
+│   │   ├── 📁 docs/
+│   │   │   ├── 📄 introduction.md
+│   │   │   ├── 📄 getting-started.md
+│   │   │   └── 📄 config.ts
+│   │   └── 📄 config.ts
+│   ├── 📁 styles/
+│   │   ├── 📄 global.css
+│   │   ├── 📄 variables.css
+│   │   └── 📄 tailwind.css
+│   ├── 📁 utils/
+│   │   ├── 📄 helpers.ts
+│   │   └── 📄 constants.ts
+│   └── 📄 env.d.ts
+├── 📁 public/
+│   ├── 📁 images/
+│   │   ├── 📄 logo.svg
+│   │   └── 📄 favicon.svg
+│   └── 📁 fonts/
+├── 📁 tests/
+│   ├── 📄 setup.ts
+│   └── 📁 unit/
+│       └── 📄 components.spec.ts
+├── 📄 astro.config.mjs
+├── 📄 tailwind.config.mjs
+├── 📄 tsconfig.json
+├── 📄 package.json
+├── 📄 package-lock.json
+├── 📄 .env
+├── 📄 .env.example
+├── 📄 .gitignore
+├── 📄 .eslintrc.cjs
+├── 📄 .prettierrc
+└── 📄 README.md

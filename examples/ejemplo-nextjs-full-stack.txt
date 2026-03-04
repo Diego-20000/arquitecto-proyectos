@@ -1,0 +1,65 @@
+mi-app-nextjs/
+├── 📁 app/
+│   ├── 📁 api/
+│   │   ├── 📁 auth/
+│   │   │   ├── 📄 route.ts
+│   │   │   └── 📄 callback/route.ts
+│   │   ├── 📁 users/
+│   │   │   ├── 📄 route.ts
+│   │   │   └── 📄 [id]/route.ts
+│   │   └── 📁 posts/
+│   │       ├── 📄 route.ts
+│   │       └── 📄 [id]/route.ts
+│   ├── 📁 components/
+│   │   ├── 📄 Header.tsx
+│   │   ├── 📄 Navbar.tsx
+│   │   ├── 📄 Footer.tsx
+│   │   └── 📄 Layout.tsx
+│   ├── 📁 auth/
+│   │   ├── 📄 page.tsx
+│   │   ├── 📄 login/page.tsx
+│   │   └── 📄 register/page.tsx
+│   ├── 📁 dashboard/
+│   │   ├── 📄 page.tsx
+│   │   ├── 📁 profile/
+│   │   │   └── 📄 page.tsx
+│   │   └── 📁 settings/
+│   │       └── 📄 page.tsx
+│   ├── 📄 page.tsx
+│   ├── 📄 layout.tsx
+│   └── 📄 globals.css
+├── 📁 lib/
+│   ├── 📄 db.ts
+│   ├── 📄 auth.ts
+│   ├── 📄 api-client.ts
+│   └── 📁 hooks/
+│       ├── 📄 useAuth.ts
+│       └── 📄 useFetch.ts
+├── 📁 public/
+│   ├── 📁 images/
+│   │   └── 📄 logo.svg
+│   └── 📁 fonts/
+├── 📁 styles/
+│   ├── 📄 variables.css
+│   ├── 📄 globals.css
+│   └── 📄 tailwind.css
+├── 📁 tests/
+│   ├── 📄 setup.ts
+│   ├── 📁 unit/
+│   │   └── 📄 example.test.ts
+│   └── 📁 integration/
+│       └── 📄 api.test.ts
+├── 📁 prisma/
+│   ├── 📄 schema.prisma
+│   └── 📁 migrations/
+│       └── 📄 migration.sql
+├── 📄 next.config.js
+├── 📄 tailwind.config.js
+├── 📄 tsconfig.json
+├── 📄 .env.local
+├── 📄 .env.example
+├── 📄 package.json
+├── 📄 package-lock.json
+├── 📄 .gitignore
+├── 📄 README.md
+└── 📄 jest.config.js

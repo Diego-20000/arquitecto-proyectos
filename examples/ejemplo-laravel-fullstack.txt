@@ -1,0 +1,105 @@
+app-laravel-moderno/
+├── 📁 app/
+│   ├── 📁 Models/
+│   │   ├── 📄 User.php
+│   │   ├── 📄 Post.php
+│   │   └── 📄 Comment.php
+│   ├── 📁 Http/
+│   │   ├── 📁 Controllers/
+│   │   │   ├── 📁 Auth/
+│   │   │   │   ├── 📄 AuthController.php
+│   │   │   │   └── 📄 RegisterController.php
+│   │   │   ├── 📁 API/
+│   │   │   │   ├── 📄 UserController.php
+│   │   │   │   ├── 📄 PostController.php
+│   │   │   │   └── 📄 CommentController.php
+│   │   │   └── 📄 HomeController.php
+│   │   ├── 📁 Requests/
+│   │   │   ├── 📄 StorePostRequest.php
+│   │   │   └── 📄 UpdatePostRequest.php
+│   │   ├── 📁 Resources/
+│   │   │   ├── 📄 UserResource.php
+│   │   │   └── 📄 PostResource.php
+│   │   └── 📁 Middleware/
+│   │       ├── 📄 Authenticate.php
+│   │       └── 📄 ApiTokenAuth.php
+│   ├── 📁 Database/
+│   │   ├── 📁 Factories/
+│   │   │   ├── 📄 UserFactory.php
+│   │   │   └── 📄 PostFactory.php
+│   │   ├── 📁 Seeders/
+│   │   │   ├── 📄 DatabaseSeeder.php
+│   │   │   └── 📄 UserSeeder.php
+│   │   └── 📁 Migrations/
+│   │       ├── 📄 2024_01_01_000000_create_users_table.php
+│   │       └── 📄 2024_01_01_000001_create_posts_table.php
+│   ├── 📁 Services/
+│   │   ├── 📄 UserService.php
+│   │   ├── 📄 PostService.php
+│   │   └── 📄 AuthService.php
+│   ├── 📁 Traits/
+│   │   ├── 📄 HasApiTokens.php
+│   │   └── 📄 Timestamps.php
+│   ├── 📁 Events/
+│   │   ├── 📄 UserCreated.php
+│   │   └── 📄 PostPublished.php
+│   ├── 📁 Listeners/
+│   │   └── 📄 SendWelcomeEmail.php
+│   └── 📁 Exceptions/
+│       └── 📄 Handler.php
+├── 📁 routes/
+│   ├── 📄 api.php
+│   ├── 📄 web.php
+│   ├── 📄 auth.php
+│   └── 📄 admin.php
+├── 📁 resources/
+│   ├── 📁 views/
+│   │   ├── 📁 layouts/
+│   │   │   ├── 📄 app.blade.php
+│   │   │   └── 📄 admin.blade.php
+│   │   ├── 📁 auth/
+│   │   │   ├── 📄 login.blade.php
+│   │   │   └── 📄 register.blade.php
+│   │   ├── 📁 posts/
+│   │   │   ├── 📄 index.blade.php
+│   │   │   ├── 📄 show.blade.php
+│   │   │   └── 📄 create.blade.php
+│   │   ├── 📁 dashboard/
+│   │   │   └── 📄 index.blade.php
+│   │   └── 📄 home.blade.php
+│   └── 📁 css/
+│       └── 📄 app.css
+├── 📁 tests/
+│   ├── 📁 Feature/
+│   │   ├── 📄 AuthTest.php
+│   │   └── 📄 PostTest.php
+│   ├── 📁 Unit/
+│   │   └── 📄 UserTest.php
+│   └── 📄 TestCase.php
+├── 📁 config/
+│   ├── 📄 app.php
+│   ├── 📄 database.php
+│   ├── 📄 mail.php
+│   └── 📄 auth.php
+├── 📁 bootstrap/
+│   ├── 📄 app.php
+│   └── 📄 cache.php
+├── 📁 storage/
+│   ├── 📁 logs/
+│   ├── 📁 app/
+│   └── 📁 framework/
+├── 📁 public/
+│   ├── 📄 index.php
+│   ├── 📁 images/
+│   ├── 📁 css/
+│   └── 📁 js/
+├── 📄 artisan
+├── 📄 composer.json
+├── 📄 composer.lock
+├── 📄 .env
+├── 📄 .env.example
+├── 📄 .gitignore
+├── 📄 phpunit.xml
+├── 📄 phpstan.neon
+├── 📄 pint.json
+└── 📄 README.md
