@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquitecto de Proyectos - Herramienta Profesional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Verde lujo */
+            --verde-dark: #1F2D1E;
+            --verde-medium: #2E3F2F;
+            --verde-light: #4A5D4A;
+            
+            /* Azul lujo */
+            --azul-dark: #0B1C2D;
+            --azul-medium: #1E2F4A;
+            --azul-light: #3A4F6B;
+            
+            /* Rojo lujo */
+            --rojo-dark: #4B0F0F;
+            --rojo-medium: #6B1E1E;
+            --rojo-light: #8B3A3A;
+            
+            /* Dorado */
+            --dorado-dark: #5C4A1A;
+            --dorado-medium: #8A6F2F;
+            --dorado-light: #C9A24D;
+            
+            /* Púrpura lujo */
+            --purpura-dark: #2A1538;
+            --purpura-medium: #4A2B5F;
+            --purpura-light: #6A4A7F;
+
+            /* Colores complementarios */
+            --white: #FFFFFF;
+            --gray-light: #F5F5F5;
+            --gray-medium: #E0E0E0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--verde-dark) 0%, var(--azul-dark) 100%);
+            color: var(--white);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg, var(--verde-dark) 0%, var(--azul-dark) 100%);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--dorado-light);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: var(--dorado-light);
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: var(--gray-light);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--verde-dark);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid var(--dorado-light);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(201, 162, 77, 0.2);
+        }
+
+        .feature-card h3 {
+            color: var(--azul-medium);
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .feature-card p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Tech Stack */
+        .tech-stack {
+            background: linear-gradient(135deg, var(--azul-medium) 0%, var(--purpura-medium) 100%);
+            padding: 40px;
+            border-radius: 10px;
+            margin: 60px 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .tech-stack h2 {
+            color: var(--dorado-light);
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2em;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .tech-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid var(--dorado-light);
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .tech-item strong {
+            color: var(--dorado-light);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Examples Section */
+        .examples {
+            margin: 60px 0;
+        }
+
+        .examples h2 {
+            color: var(--dorado-light);
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .example-box {
+            background: linear-gradient(135deg, var(--verde-dark) 0%, var(--verde-medium) 100%);
+            padding: 30px;
+            border-radius: 10px;
+            border: 2px solid var(--dorado-light);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .example-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 50px rgba(201, 162, 77, 0.3);
+        }
+
+        .example-box h3 {
+            color: var(--dorado-light);
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .example-box p {
+            color: var(--gray-light);
+            font-size: 0.95em;
+            margin-bottom: 15px;
+        }
+
+        .example-box code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            color: var(--dorado-light);
+            display: block;
+            overflow-x: auto;
+            font-size: 0.9em;
+        }
+
+        /* CTA Button */
+        .cta-section {
+            text-align: center;
+            margin: 80px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--dorado-medium) 0%, var(--dorado-light) 100%);
+            color: var(--verde-dark);
+            padding: 18px 50px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(201, 162, 77, 0.4);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(201, 162, 77, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--verde-dark);
+            color: var(--gray-light);
+            text-align: center;
+            padding: 30px;
+            margin-top: 100px;
+            border-top: 4px solid var(--dorado-light);
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: var(--dorado-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--dorado-medium);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .container {
+                padding: 20px 10px;
+            }
+
+            .features,
+            .tech-grid,
+            .example-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>🏗️ Arquitecto de Proyectos</h1>
+        <p>Herramienta profesional para generar estructuras de proyectos</p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Features -->
+        <section class="features">
+            <div class="feature-card">
+                <h3>⚡ Sin APIs Externas</h3>
+                <p>Funciona 100% en tu máquina. No depende de servicios externos. Control total sobre tus datos.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎯 Fácil de Usar</h3>
+                <p>Solo necesitas un archivo de texto. Describe la estructura con símbolos simples y ¡listo!</p>
+            </div>
+            <div class="feature-card">
+                <h3>⚙️ Flexible</h3>
+                <p>Soporta cualquier tipo de estructura. Perfecta para todos tus proyectos.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🚀 Rápido</h3>
+                <p>Genera proyectos en segundos. Automatiza tareas repetitivas y ahorra tiempo.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📚 Bien Documentada</h3>
+                <p>Documentación completa, ejemplos listos para usar y guías detalladas.</p>
+            </div>
+            <div class="feature-card">
+                <h3>💼 Profesional</h3>
+                <p>Código limpio, bien estructurado y listo para producción.</p>
+            </div>
+        </section>
+
+        <!-- Tech Stack -->
+        <section class="tech-stack">
+            <h2>Stack Tecnológico</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <strong>Node.js</strong>
+                    <span>v12+</span>
+                </div>
+                <div class="tech-item">
+                    <strong>JavaScript</strong>
+                    <span>ES2021</span>
+                </div>
+                <div class="tech-item">
+                    <strong>Git</strong>
+                    <span>Control de versiones</span>
+                </div>
+                <div class="tech-item">
+                    <strong>GitHub</strong>
+                    <span>Repositorio público</span>
+                </div>
+                <div class="tech-item">
+                    <strong>ESLint</strong>
+                    <span>Linting</span>
+                </div>
+                <div class="tech-item">
+                    <strong>Prettier</strong>
+                    <span>Formateo</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Examples -->
+        <section class="examples">
+            <h2>Ejemplos Disponibles</h2>
+            <div class="example-grid">
+                <div class="example-box">
+                    <h3>🌐 Web (React)</h3>
+                    <p>Estructura completa para sitios web modernos con React, componentes y estilos.</p>
+                    <code>node index.js examples/ejemplo-web.txt</code>
+                </div>
+                <div class="example-box">
+                    <h3>🔌 API REST (Express)</h3>
+                    <p>Estructura para APIs REST con controladores, modelos y rutas organizadas.</p>
+                    <code>node index.js examples/ejemplo-api.txt</code>
+                </div>
+                <div class="example-box">
+                    <h3>📄 HTML Simple</h3>
+                    <p>Estructura básica HTML, CSS y JavaScript para proyectos sencillos.</p>
+                    <code>node index.js examples/ejemplo-simple.txt</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <h2 style="color: var(--dorado-light); margin-bottom: 30px; font-size: 2em;">¿Listo para comenzar?</h2>
+            <a href="https://github.com/Diego-20000/arquitecto-proyectos" class="cta-button">
+                Ir al Repositorio en GitHub →
+            </a>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Arquitecto de Proyectos</strong> - v0.1.0</p>
+        <p>Creado por <a href="https://github.com/Diego-20000">Diego-20000</a></p>
+        <p>Licencia MIT - Completamente libre y de código abierto</p>
+        <p style="margin-top: 20px; font-size: 0.9em;">⭐ Si te fue útil, dale una estrella en GitHub</p>
+    </footer>
+</body>
+</html>
